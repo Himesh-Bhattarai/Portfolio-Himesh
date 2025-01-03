@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Preloader from "./Preloader";
 import Menu from "./Menu";
 import { Link } from "react-router-dom";
 
 export default function Projects({ profileImage, intervalforpp }) {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500); // Adjust time as needed
-
-    return () => clearTimeout(timer);
-  }, []);
-
+ 
   // Example projects data
   // const projects = [
   //   { title: "Portfolio Website", status: "Complete", progress: 100 },
@@ -24,7 +13,6 @@ export default function Projects({ profileImage, intervalforpp }) {
 
   return (
     <>
-      <Preloader isLoading={loading} />
       <div style={{ display: "flex" }}>
         <div className="menu-container" style={{ width: "20%" }}>
           <Menu profileImage={profileImage} intervalforpp={intervalforpp} />

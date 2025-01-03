@@ -1,18 +1,9 @@
-import React, {  useEffect, useState } from "react";
+import React, { useState } from "react";
 import Menu from "./Menu";
 import Images from "./Images";
-import Preloader from './Preloader';
 
 export default function Vault({ profileImage, intervalforpp }) {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500); // Adjust time as needed
-
-    return () => clearTimeout(timer);
-  }, []);
+ 
 
   const [isUserAuth, setIsUserAuth] = useState(false); // To track if the user is auth
   const [username, setUsername] = useState("");
@@ -149,7 +140,6 @@ export default function Vault({ profileImage, intervalforpp }) {
 
   return (
     <>
-               <Preloader isLoading={loading} />
       <div style={{ display: "flex" }}>
         <div className="menu-container">
           <Menu profileImage={profileImage} intervalforpp={intervalforpp} />

@@ -3,18 +3,19 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css';
 import './index.css';
 // Components
-import Entrance from './component/Entrance';
+// import Entrance from './component/Entrance';
 import About from './component/About';
 import Resume from './component/Resume';
 import Portfolio from './component/Portfolio';
-import More from './component/More';
 import Contact from './component/Contact';
 import Service from './component/Service';
-import Vault from './component/Vault';
-import Biodata from './component/Biodata';
-import Projects from './component/Projects';
-import Images from './component/Images';
 import Preloader from './component/Preloader';
+import Dashboard from './component/Dashboard';
+import Home from './component/Home';
+// import Vault from './component/Vault';
+// import Biodata from './component/Biodata';
+// import Projects from './component/Projects';
+// import Images from './component/Images';
 
 function App() {
   // Style for the marquee text in Entrance.js / Home.js component
@@ -32,13 +33,10 @@ function App() {
 
   // Array of URIs for changing the profile picture in Nav
   const profileImage = [
-    "/assets/img/Realpic/profile-pic.jpeg",
-    "/assets/img/Realpic/profile-pic2.jpg",
-    "/assets/img/Realpic/profile-pic3.jpg",
-    "/assets/img/Realpic/profile-pic6.jpeg",
+    "/assets/img/Realpic/profile-pic-main.jpg",
   ];
 
-  //Loading timer- when you open any coponent you can see animation of opening door
+  //Loading timer- when you open any coponent you can see animation of opening door(this preloader is no longer available on every nav component)
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -54,19 +52,15 @@ function App() {
     <Router>
       <Preloader isLoading={loading} />
         <Routes>
-          <Route path="/" element={<Navigate to="/Entrance" />} />
-          <Route path="/Entrance" element={<Entrance profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
-          <Route path="/Home" element={<Entrance profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
-          <Route path="/About" element={<About profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
+          <Route path="/" element={<Navigate to="/Dashboard" />} />
+          <Route path="/Dashboard" element={<Dashboard profileImage={profileImage} ImageURI={background} interval={4444444440} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
+          <Route path="/Home" element={<Home profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
+          <Route path="/About" element={<About profileImage={profileImage} ImageURI={background} interval={0} intervalforpp={0} textStyle={marqueeTextStyle} />} />
           <Route path="/Resume" element={<Resume profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
           <Route path="/Service" element={<Service profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
           <Route path="/Portfolio" element={<Portfolio profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
-          <Route path="/More" element={<More profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
           <Route path="/Contact" element={<Contact profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
-          <Route path="/Images" element={<Images profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
-          <Route path="/Vault" element={<Vault profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
-          <Route path="/Biodata" element={<Biodata profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
-          <Route path="/Projects" element={<Projects profileImage={profileImage} ImageURI={background} interval={43200000} intervalforpp={5000} textStyle={marqueeTextStyle} />} />
+         
         </Routes>
     </Router>
   );

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from 'react-router-dom';
 import Menu from "./Menu";
@@ -6,20 +5,9 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import MyLocMap from "./MyLocMap";
 import Typed from 'typed.js';
-import Preloader from './Preloader';
-
 
 export default function Entrance({ textStyle, interval, ImageURI, profileImage, intervalforpp }) {
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500); // Adjust time as needed
-
-    return () => clearTimeout(timer);
-  }, []);
-  
   //#code for changing background-image every 12 hrs//
   
     const [currentImage, setCurrentImage] = useState(ImageURI[0]);
@@ -35,7 +23,6 @@ export default function Entrance({ textStyle, interval, ImageURI, profileImage, 
     }, [ImageURI, interval]);
   
   
-  //!code for changing background-image every 12 hrs end here//
 
   //Home container moving text
   
@@ -81,7 +68,6 @@ export default function Entrance({ textStyle, interval, ImageURI, profileImage, 
     
   return (
     <>
-               <Preloader isLoading={loading} />
      <div className="whole-container" style={{ display: "flex" }}>
         {/* Left-side menu */}
         <div className="menu-container" >

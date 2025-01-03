@@ -10,15 +10,7 @@ export default function Home({ textStyle, interval = 5000, ImageURI = [], profil
 
   //changing background image every 12 hours code
   const [currentImage, setCurrentImage] = useState(ImageURI.length > 0 ? ImageURI[0] : '');
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500); // Adjust time as needed
-
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     if (ImageURI.length > 0) {
@@ -81,7 +73,6 @@ useEffect(() => {
   /******************************************* */
   return (
     <>
-               <Preloader isLoading={loading} />
      <div className="whole-container" style={{ display: "flex" }}>
       <div className="menu-container" >
           <Menu profileImage={profileImage} intervalforpp={intervalforpp} />

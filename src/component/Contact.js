@@ -1,23 +1,12 @@
 import React from 'react';
 import Menu from './Menu';
 import { Link } from 'react-router-dom';
-import { useState, useEffect, } from 'react';
-import Preloader from './Preloader';
 import MyLocMap from './MyLocMap';
 
 export default function Contact({ profileImage, intervalforpp} ) {
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500); // Adjust time as needed
-
-    return () => clearTimeout(timer);
-  }, []);
   return (
     <>
-               <Preloader isLoading={loading} />
 
          <div className="whole-container" style={{ display: "flex" }}>
         {/* Left-side menu */}

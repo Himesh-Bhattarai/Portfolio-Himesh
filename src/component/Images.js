@@ -1,25 +1,13 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import GLightbox from 'glightbox';
 import 'glightbox/dist/css/glightbox.css';
 import 'aos/dist/aos.css';
 
-import Preloader from './Preloader';
-
-
-
 export default function Images() {
   
  
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500); // Adjust time as needed
-
-    return () => clearTimeout(timer);
-  }, []);
   useEffect(() => {
 
     // Initialize AOS and GLightbox
@@ -42,7 +30,6 @@ export default function Images() {
 
   return (
     <>          
-         <Preloader isLoading={loading} />
   
           <section id="gallery" className="gallery section">
 <div className="container-fluid" data-aos="fade-up" data-aos-delay="100">
